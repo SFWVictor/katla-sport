@@ -45,6 +45,7 @@ namespace KatlaSport.DataAccess.Migrations
         {
             var timestamp = DateTime.UtcNow;
             var creatorId = 1;
+            var manufacturerCode = "EPAM";
 
             context.ProductCategories.AddOrUpdate(
                 i => i.Id,
@@ -89,6 +90,8 @@ namespace KatlaSport.DataAccess.Migrations
                     CategoryId = 1,
                     IsDeleted = false,
                     CreatedBy = creatorId,
+                    ManufacturerCode = manufacturerCode,
+                    Price = 2,
                     LastUpdatedBy = creatorId,
                     LastUpdated = timestamp
                 },
@@ -100,6 +103,8 @@ namespace KatlaSport.DataAccess.Migrations
                     CategoryId = 1,
                     IsDeleted = false,
                     CreatedBy = creatorId,
+                    ManufacturerCode = manufacturerCode,
+                    Price = 2,
                     LastUpdatedBy = creatorId,
                     LastUpdated = timestamp
                 },
@@ -111,6 +116,8 @@ namespace KatlaSport.DataAccess.Migrations
                     CategoryId = 2,
                     IsDeleted = false,
                     CreatedBy = creatorId,
+                    ManufacturerCode = manufacturerCode,
+                    Price = 2,
                     LastUpdatedBy = creatorId,
                     LastUpdated = timestamp
                 },
@@ -122,6 +129,8 @@ namespace KatlaSport.DataAccess.Migrations
                     CategoryId = 3,
                     IsDeleted = false,
                     CreatedBy = creatorId,
+                    ManufacturerCode = manufacturerCode,
+                    Price = 2,
                     LastUpdatedBy = creatorId,
                     LastUpdated = timestamp
                 });
