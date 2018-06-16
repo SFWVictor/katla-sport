@@ -37,7 +37,7 @@ namespace KatlaSport.DataAccess.ProductCatalogue
         /// <summary>
         /// Gets or sets a product price.
         /// </summary>
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Gets or sets an ID for the product category the product belongs to.
