@@ -78,33 +78,33 @@ namespace KatlaSport.WebApi.Controllers
         }
 
         [HttpPut]
-        [Route("{id:int:min(1)}")]
+        [Route("{hiveId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Updates an existing hive.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> UpdateHive([FromUri] int id, [FromBody] UpdateHiveRequest updateRequest)
+        public async Task<IHttpActionResult> UpdateHive([FromUri] int hiveId, [FromBody] UpdateHiveRequest updateRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            await _hiveService.UpdateHiveAsync(id, updateRequest);
+            await _hiveService.UpdateHiveAsync(hiveId, updateRequest);
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 
         [HttpDelete]
-        [Route("{id:int:min(1)}")]
+        [Route("{hiveId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Deletes an existing hive.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> DeleteHive([FromUri] int id)
+        public async Task<IHttpActionResult> DeleteHive([FromUri] int hiveId)
         {
-            await _hiveService.DeleteHiveAsync(id);
+            await _hiveService.DeleteHiveAsync(hiveId);
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 
