@@ -31,7 +31,7 @@ namespace KatlaSport.Services.HiveManagement
         /// <inheritdoc/>
         public async Task<List<HiveSectionListItem>> GetHiveSectionsAsync()
         {
-            var dbHiveSections = await _context.Sections.OrderBy(s => s.Id).ToArrayAsync();
+            var dbHiveSections = await _context.Sections.OrderBy(s => s.Id).ToArrayAsync().ConfigureAwait(false);
             var hiveSections = dbHiveSections.Select(s => Mapper.Map<HiveSectionListItem>(s)).ToList();
             return hiveSections;
         }
