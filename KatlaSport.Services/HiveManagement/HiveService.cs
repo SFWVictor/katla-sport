@@ -25,7 +25,7 @@ namespace KatlaSport.Services.HiveManagement
         public HiveService(IProductStoreHiveContext context, IUserContext userContext)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
-            _userContext = userContext ?? throw new ArgumentNullException();
+            _userContext = userContext ?? throw new ArgumentNullException(nameof(userContext));
         }
 
         /// <inheritdoc/>
